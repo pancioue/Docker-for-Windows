@@ -34,7 +34,6 @@ Hyper-V屬於BIOS級別，而不是在作業系統內執行的程式。因此即
     ![WSL-2-architecture](https://user-images.githubusercontent.com/24542187/114294880-13bf9900-9ad4-11eb-9af4-e9b2c1041f56.png)  
     由此圖可以看到WSL2才真的包含了Linux kernel  
 
-在網路上查不到當在WSL2安裝多個VM時，是否使用的是同一組kernel，大部分網路上的圖示都把Linux kernel包在VM裡面，如果按照圖示當有多組VM時底層應該是不同組Linux kernel
     
 圖片來源:  
 https://www.altaro.com/hyper-v/what-is-hyper-v/  
@@ -43,7 +42,7 @@ https://fossbytes.com/what-is-windows-subsystem-for-linux-wsl/
 這裡是依照hypervisor的型別做分類，這裡有一篇wsl、wsl2架構比較
 https://www.lijyyh.com/2020/07/linuxwindowswindows-subsystem-for.html
 
-# Docker on windows
+# Docker for windows
 docker底層是用Linux kernel，要在windows上跑就必需額外啟用上述提到的虛擬技術  
 較早的版本似乎是使用hyper-v虛擬技術(Windows Home版不支援啟動hyper-v)，
 不過我安裝docker的時候已經是使用WSL2，也不需要hyper-v，據官方說法WSL2效能上要好很多
