@@ -6,8 +6,8 @@
 * 另一類則執行在作業系統上，就像其他電腦程式那樣執行，寄居或代管 hypervisor
   VirtualBox、VMware Workstation和VMware Workstation Player都是屬於這類
   
-![hypervisor](https://user-images.githubusercontent.com/24542187/114294388-e02f3f80-9ad0-11eb-92d9-9c49688f91da.png)  
-圖片來源:http://www.techplayon.com/what-is-hypervisor/
+![Hyperviseur svg](https://user-images.githubusercontent.com/24542187/114295723-a44ca800-9ad9-11eb-9b77-772d45c2846c.png)
+圖片源自維基百科
 
 Hyper-V屬於BIOS級別，而不是在作業系統內執行的程式。因此即便沒有使用任何的虛擬機器
 虛擬化服務也是處於開啟狀態，這樣可能會消耗掉一定的硬體資源
@@ -32,7 +32,9 @@ Hyper-V屬於BIOS級別，而不是在作業系統內執行的程式。因此即
     
   * WSL2  
     ![WSL-2-architecture](https://user-images.githubusercontent.com/24542187/114294880-13bf9900-9ad4-11eb-9af4-e9b2c1041f56.png)  
-    由此圖可以看到WSL2才真的包含了Linux kernel
+    由此圖可以看到WSL2才真的包含了Linux kernel  
+
+在網路上查不到當在WSL2安裝多個VM時，是否使用的是同一組kernel，大部分網路上的圖示都把Linux kernel包在VM裡面，如果按照圖示當有多組VM時底層應該是不同組Linux kernel
     
 圖片來源:  
 https://www.altaro.com/hyper-v/what-is-hyper-v/  
@@ -50,10 +52,10 @@ docker底層是用Linux kernel，要在windows上跑就必需額外啟用上述�
 啟動Virtual Machine Platform 與 Windows Subsystem for Linux  
 ![installWSL](https://user-images.githubusercontent.com/24542187/114295637-11ac0900-9ad9-11eb-85a2-d8c2af22ad3d.jpg)
 
-
-
 都安裝好後可以下以下指令改成預設以WSL2啟動  
 `wsl --set-default-version 2` 或 `wsl --set-version Ubuntu-18.04 2`  
 
-安裝教學可參考:https://blog.walterlv.com/post/how-to-install-wsl2.html#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%90%AF%E7%94%A8-wsl2
+安裝教學可參考:https://blog.walterlv.com/post/how-to-install-wsl2.html#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%90%AF%E7%94%A8-wsl2  
+
+* 大部分網路上的教學都會包含安裝一個Linux發行版，不過那是為了測試WSL2有正常啟動，並不是必要的步驟
 * 官方下載的windows版docker基本上就是一直下一步，有缺少的就提醒要安裝
